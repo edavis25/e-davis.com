@@ -12,6 +12,15 @@ section#contact {
     input,
     textarea {
       padding: 20px;
+      &::selection {
+          color: #fff;
+      }
+      &::-moz-selection {
+          color: #fff;
+      }
+      &::-ms-selection {
+          color: #fff;
+      }
     }
     input.form-control {
       height: auto;

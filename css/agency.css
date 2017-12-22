@@ -447,6 +447,15 @@ section#contact .form-group {
   section#contact .form-group input,
   section#contact .form-group textarea {
     padding: 20px; }
+    section#contact .form-group input::selection,
+    section#contact .form-group textarea::selection {
+      color: #fff; }
+    section#contact .form-group input::-moz-selection,
+    section#contact .form-group textarea::-moz-selection {
+      color: #fff; }
+    section#contact .form-group input::-ms-selection,
+    section#contact .form-group textarea::-ms-selection {
+      color: #fff; }
   section#contact .form-group input.form-control {
     height: auto; }
   section#contact .form-group textarea.form-control {
