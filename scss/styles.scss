@@ -1,0 +1,274 @@
+// Variable and Mixin imports
+@import "variables.scss";
+@import "mixins.scss";
+
+body {
+  background-color: #000;
+  -webkit-tap-highlight-color: #ff3385;
+  background-image: url('../img/grid-blue.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center 75px;
+  @include background-cover;
+}
+
+#head-section {
+  margin-top: 75px;
+}
+
+.glowing-border {
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 7px;
+
+  &.pink {
+    box-shadow: 0 0 12px 2px $theme-pink;
+    border-color: $theme-pink;
+  }
+
+  &.blue {
+    box-shadow: 0 0 12px 2px $theme-blue;
+    border-color: $theme-blue;
+  }
+  &.red {
+    box-shadow: 0 0 12px 2px $theme-red;
+    border-color: $theme-red;
+  }
+}
+.glowing-link:hover, .glowing-link a:hover {
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0px 0px 15px $theme-pink, 0px 0px 15px $theme-pink, 0px 0px 15px $theme-pink;
+}
+.hr-white {
+  width: 40%;
+  border: 2px solid #fff;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+.hr-pink {
+  width: 70%;
+  border: 2px solid $theme-pink;
+  margin: 0 auto;
+  box-shadow: 0 0 12px 2px $theme-pink;
+  border-radius: 8px;
+}
+.hr-blue {
+  width: 70%;
+  border: 2px solid $theme-blue;
+  margin: 0 auto;
+  box-shadow: 0 0 12px 2px $theme-blue;
+  border-radius: 8px;
+}
+.pdf-link {
+  font-size: 1.3em;
+  text-align: left !important;
+  list-style-type: none;
+  padding-bottom: 5px;
+}
+.section-content {
+  padding: 10px;
+  line-height: 1.15rem;
+}
+
+/* Modal styles */
+.portfolio-modal {
+  .modal-content {
+    background-color: rgba(0,0,0,0.95) !important;
+    width: 100vw;
+
+    .close-modal {
+      margin-right: 20px;
+      transform:rotate(0deg);
+      transition: transform 0.2s linear;
+
+      &:hover {
+        transform:rotate(180deg);
+        .lr, .rl {
+          opacity: 0.8;
+          box-shadow: 0 0 9px 2px $theme-pink;
+          background-color: $theme-pink;
+        }
+      }
+      .lr, .rl {
+        background-color: #fff;
+        width: 3px;
+      }
+    }
+  }
+}
+
+/* Glowing strikethrough on word. Code adapted thanks to: http://stackoverflow.com/a/16410273 */
+.strikeout {
+  line-height: 0.6em;
+  position: relative;
+}
+.strikeout::after {
+  border-bottom: 0.15em solid #ff0000;
+  border-radius: 5px;
+  box-shadow: 0 0 8px 2px #ff0000;
+  content: "";
+  left: 0;
+  margin-top: calc(0.125em / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 60%;
+  transform: rotate(-04deg);
+}
+
+/* Styles for animated terminator image */
+#blink {
+    position: relative;
+    top: -3px;
+    font-size: 1.5em;
+}
+#terminator-img {
+  margin-left: 10px;
+}
+#terminator-wrap {
+    color: white;
+    @include terminator-font;
+    position: relative;
+    display: inline-block;
+}
+
+/* Styles for the animated skills chart */
+.skill-label {
+  color: #ffffff;
+  margin-bottom: 4px;
+  margin-right: 10px;
+  float: right;
+  @include terminator-font;
+  text-align: right;
+  font-size: 16px;
+
+  @media screen and (max-width: 515px) {
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: 375px) {
+    font-size: 11px;
+  }
+}
+.skill-bar {
+  margin-right: 1px;
+  margin-bottom: 5px;
+  display: inline-block;
+  border-radius: 4px;
+  height: 30px;
+  width: 4%;
+
+  @media screen and (max-width: 515px) {
+    width: 3%;
+  }
+
+  @media screen and (max-width: 375px) {
+    width: 3%;
+  }
+}
+#skills-table {
+  td {
+    text-align: left;
+    align: left;
+  }
+}
+
+/*
+@media screen and (max-width: 515px) {
+  .skill-bar {
+    width: 3%;
+  }
+  .skill-label {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .skill-bar {
+    width: 3%;
+  }
+  .skill-label {
+    font-size: 11px;
+  }
+}
+*/
+
+// Theme overrides
+.section-heading {
+  padding-bottom: 20px !important;
+}
+.padded-heading {
+  padding: 30px;
+}
+ul[role="alert"] {
+  list-style-type: none;
+  color: $theme-red;
+  text-shadow: 0px 0px 15px $theme-red, 0px 0px 15px $theme-red, 0px 0px 15px $theme-red;
+}
+
+// Bootstrap Overrides
+.alert-danger {
+  background-color: $theme-red;
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 9px 2px $theme-red;
+}
+.alert-success {
+  background-color: #0ea018;
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 9px 2px #0ea018;
+}
+.btn-blue {
+  font-weight: 700;
+  @include button-variant(white, $theme-blue, $theme-blue);
+  @include heading-font;
+}
+.btn-primary:hover {
+  box-shadow: 0 0 9px 2px $theme-pink;
+}
+.hidden-xs {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+.hidden-sm {
+  @media (min-width: 768px) and (max-width: 991px) {
+    display: none;
+  }
+}
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+
+
+// Generic Helper Classes
+.bg-transparent {
+  background-color: rgba(0,0,0,0.8) !important;
+}
+.div-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.full-width {
+  width: 100%;
+}
+.margin-bottom25 {
+  margin-bottom: 25px;
+}
+
+// Font Helpers
+.chicago {
+  @include chicago-font;
+}
+.terminator {
+  @include terminator-font;
+}
+.text-left {
+  text-align: left;
+}
+.white-text {
+  color: #fff;
+}
