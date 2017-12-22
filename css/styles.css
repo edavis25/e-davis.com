@@ -1,0 +1,278 @@
+@font-face {
+  font-family: terminator;
+  src: url("fonts/terminator.ttf"); }
+
+@font-face {
+  font-family: chicago;
+  src: url("fonts/chicago.ttf"); }
+
+body {
+  background-color: #000;
+  -webkit-tap-highlight-color: #ff3385;
+  background-image: url("../img/grid-blue.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center 75px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+#head-section {
+  margin-top: 75px; }
+
+.glowing-border {
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 7px; }
+  .glowing-border.pink {
+    box-shadow: 0 0 12px 2px #FF00FC;
+    border-color: #FF00FC; }
+  .glowing-border.blue {
+    box-shadow: 0 0 12px 2px #0373e5;
+    border-color: #0373e5; }
+  .glowing-border.red {
+    box-shadow: 0 0 12px 2px #ff0000;
+    border-color: #ff0000; }
+
+.glowing-link:hover, .glowing-link a:hover {
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0px 0px 15px #FF00FC, 0px 0px 15px #FF00FC, 0px 0px 15px #FF00FC; }
+
+.hr-white {
+  width: 40%;
+  border: 2px solid #fff;
+  margin: 0 auto;
+  border-radius: 8px; }
+
+.hr-pink {
+  width: 70%;
+  border: 2px solid #FF00FC;
+  margin: 0 auto;
+  box-shadow: 0 0 12px 2px #FF00FC;
+  border-radius: 8px; }
+
+.hr-blue {
+  width: 70%;
+  border: 2px solid #0373e5;
+  margin: 0 auto;
+  box-shadow: 0 0 12px 2px #0373e5;
+  border-radius: 8px; }
+
+.pdf-link {
+  font-size: 1.3em;
+  text-align: left !important;
+  list-style-type: none;
+  padding-bottom: 5px; }
+
+.section-content {
+  padding: 10px;
+  line-height: 1.15rem; }
+
+/* Modal styles */
+.portfolio-modal .modal-content {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  width: 100vw; }
+  .portfolio-modal .modal-content .close-modal {
+    margin-right: 20px;
+    transform: rotate(0deg);
+    transition: transform 0.2s linear; }
+    .portfolio-modal .modal-content .close-modal:hover {
+      transform: rotate(180deg); }
+      .portfolio-modal .modal-content .close-modal:hover .lr, .portfolio-modal .modal-content .close-modal:hover .rl {
+        opacity: 0.8;
+        box-shadow: 0 0 9px 2px #FF00FC;
+        background-color: #FF00FC; }
+    .portfolio-modal .modal-content .close-modal .lr, .portfolio-modal .modal-content .close-modal .rl {
+      background-color: #fff;
+      width: 3px; }
+
+/* Glowing strikethrough on word. Code adapted thanks to: http://stackoverflow.com/a/16410273 */
+.strikeout {
+  line-height: 0.6em;
+  position: relative; }
+
+.strikeout::after {
+  border-bottom: 0.15em solid #ff0000;
+  border-radius: 5px;
+  box-shadow: 0 0 8px 2px #ff0000;
+  content: "";
+  left: 0;
+  margin-top: calc(0.125em / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 60%;
+  transform: rotate(-4deg); }
+
+/* Styles for animated terminator image */
+#blink {
+  position: relative;
+  top: -3px;
+  font-size: 1.5em; }
+
+#terminator-img {
+  margin-left: 10px; }
+
+#terminator-wrap {
+  color: white;
+  font-family: "terminator", "Lucida Console", Monaco, monospace, sans-serif;
+  position: relative;
+  display: inline-block; }
+
+/* Styles for the animated skills chart */
+.skill-label {
+  color: #ffffff;
+  margin-bottom: 4px;
+  margin-right: 10px;
+  float: right;
+  font-family: "terminator", "Lucida Console", Monaco, monospace, sans-serif;
+  text-align: right;
+  font-size: 16px; }
+  @media screen and (max-width: 515px) {
+    .skill-label {
+      font-size: 13px; } }
+  @media screen and (max-width: 375px) {
+    .skill-label {
+      font-size: 11px; } }
+
+.skill-bar {
+  margin-right: 1px;
+  margin-bottom: 5px;
+  display: inline-block;
+  border-radius: 4px;
+  height: 30px;
+  width: 4%; }
+  @media screen and (max-width: 515px) {
+    .skill-bar {
+      width: 3%; } }
+  @media screen and (max-width: 375px) {
+    .skill-bar {
+      width: 3%; } }
+
+#skills-table td {
+  text-align: left;
+  align: left; }
+
+/*
+@media screen and (max-width: 515px) {
+  .skill-bar {
+    width: 3%;
+  }
+  .skill-label {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .skill-bar {
+    width: 3%;
+  }
+  .skill-label {
+    font-size: 11px;
+  }
+}
+*/
+.section-heading {
+  padding-bottom: 20px !important; }
+
+.padded-heading {
+  padding: 30px; }
+
+ul[role="alert"] {
+  list-style-type: none;
+  color: #ff0000;
+  text-shadow: 0px 0px 15px #ff0000, 0px 0px 15px #ff0000, 0px 0px 15px #ff0000; }
+
+.alert-danger {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 9px 2px #ff0000; }
+
+.alert-success {
+  background-color: #0ea018;
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 9px 2px #0ea018; }
+
+.btn-blue {
+  font-weight: 700;
+  color: white;
+  border-color: #0373e5;
+  background-color: #0373e5;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase; }
+  .btn-blue.focus, .btn-blue:focus {
+    color: white;
+    border-color: #013467;
+    background-color: #025ab3; }
+  .btn-blue:hover {
+    color: white;
+    border-color: #0255a9;
+    background-color: #025ab3; }
+  .btn-blue.active, .btn-blue:active,
+  .open > .btn-blue.dropdown-toggle {
+    color: white;
+    border-color: #0255a9;
+    background-color: #025ab3; }
+    .btn-blue.active.focus, .btn-blue.active:focus, .btn-blue.active:hover, .btn-blue:active.focus, .btn-blue:active:focus, .btn-blue:active:hover,
+    .open > .btn-blue.dropdown-toggle.focus,
+    .open > .btn-blue.dropdown-toggle:focus,
+    .open > .btn-blue.dropdown-toggle:hover {
+      color: white;
+      border-color: #013467;
+      background-color: #02488f; }
+  .btn-blue.active, .btn-blue:active,
+  .open > .btn-blue.dropdown-toggle {
+    background-image: none; }
+  .btn-blue.disabled.focus, .btn-blue.disabled:focus, .btn-blue.disabled:hover, .btn-blue[disabled].focus, .btn-blue[disabled]:focus, .btn-blue[disabled]:hover,
+  fieldset[disabled] .btn-blue.focus,
+  fieldset[disabled] .btn-blue:focus,
+  fieldset[disabled] .btn-blue:hover {
+    border-color: #0373e5;
+    background-color: #0373e5; }
+  .btn-blue .badge {
+    color: #0373e5;
+    background-color: white; }
+
+.btn-primary:hover {
+  box-shadow: 0 0 9px 2px #FF00FC; }
+
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-sm {
+    display: none; } }
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  margin: auto; }
+
+.bg-transparent {
+  background-color: rgba(0, 0, 0, 0.8) !important; }
+
+.div-absolute {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.full-width {
+  width: 100%; }
+
+.margin-bottom25 {
+  margin-bottom: 25px; }
+
+.chicago {
+  font-family: "chicago", "Lucida Console", Monaco, monospace, sans-serif; }
+
+.terminator {
+  font-family: "terminator", "Lucida Console", Monaco, monospace, sans-serif; }
+
+.text-left {
+  text-align: left; }
+
+.white-text {
+  color: #fff; }
