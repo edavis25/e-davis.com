@@ -65,7 +65,7 @@ function animateTerminatorImage() {
         'fontSize': fontSize + 'px',
         'lineHeight': lineHeight + 'px'
     });
-    
+
     // Create "analysis" text string and type to div
     var str = "ANALYSIS<br>****************<br>\n\
                 NAME: ERIC DAVIS<br>LOCATION:<br>\n\
@@ -111,13 +111,13 @@ function animateTerminatorImage() {
  */
 function animateSkillBars() {
     var skills = {
-        'php' : 18, 
-        'javascript' : 15,
-        'sql' : 19,
-        'java' : 12,
-        'html' : 20,
-        'css' : 17,
-        'bootstrap' : 16
+        'sql': 12,
+        'html': 20,
+        'css': 17,
+        'vuejs': 14,
+        'javascript': 15,
+        'laravel': 18,
+        'php': 18
     };
 
     $.each(skills, function(key, value) {
